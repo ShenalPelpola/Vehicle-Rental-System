@@ -1,0 +1,83 @@
+input{
+    width: 700px;
+}
+
+.details-div{
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+.form-div{
+    margin-top: -540px;
+    float: right;
+    width : 60%;
+    margin-left: -1000px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}
+
+.alert{
+    width: 700px;
+    margin-top: -15px;
+}
+form{
+    margin-left: 110px;
+}
+.details-div{
+    margin-left: 50px;
+}
+
+.vehicle-details{
+    margin-top: 80px;
+    background-color:  #f1f1f1;
+    border-radius: 8px;
+    color: black;
+    width: 500px;
+    height: 500px;
+    padding: 50px 0;
+    font-size: 16px;
+}
+
+.vehicle-details h1{
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+.vehicle-details li{
+    line-height: 60px;
+}
+
+.form-control.ng-touched.ng-invalid{
+    border: 1px solid red;
+}
+
+.btn{
+    width: 100px;
+    height: 45px;
+    background-color:  #64ce83;
+    border: 1px solid #56ce7a;
+}
+
+.btn:hover{
+    background-color: #5edb83;
+    border: 1px solid #56ce7a;
+}
+
+#flashMessage {
+    color: white;
+    background-color: #64ce83;
+    text-align: center;
+    font-size: 16px;
+    padding: 15px;
+    border-radius: 5px;
+    display: block;
+    height: 70px;
+    width: 100%;
+    margin-bottom: 40px;
+}

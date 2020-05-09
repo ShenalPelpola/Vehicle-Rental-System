@@ -1,0 +1,122 @@
+<div class="main clearfix">
+    <div id="flashMessage">
+        <p>Thank you for renting at Westminster Vehicle Rental, details of your booking will be email to you soon!</p>
+    </div>
+    <div class="details-div">
+        <div class="vehicle-details">
+                <h1 style="text-align: center;">{{selectedVehicle.make + ' ' + selectedVehicle.model}}</h1>
+                <ul>
+                    <li>{{"Plate number     :" +  selectedVehicle.plateNo}}</li>
+                    <li>{{"Engine Capacity  :" + selectedVehicle.engineCapacity}}</li>
+                    <li>{{"Rent per day Rs." + selectedVehicle.rentPerDay}}</li>
+                    <li>{{"Color            :" + selectedVehicle.color}}</li>
+                    <li>{{"Transmisson Type :" + selectedVehicle.transmissionType}}</li>
+                </ul>
+        </div>
+    </div>
+    <div class="form-div">
+        <form #customerForm ="ngForm">
+            <h1>Booking Form</h1><br>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                 required 
+                 minlength="3" 
+                 id= "name" 
+                 type="text"
+                 class="form-control" 
+                 [(ngModel)]= "customer.customerName" 
+                 name="customerName" 
+                 #nameControl="ngModel">
+            </div>
+            <div 
+                class="alert alert-danger" 
+                *ngIf="!nameControl.valid && nameControl.touched">
+                <div *ngIf="nameControl.errors.required">
+                    Name is required.
+                </div>
+                <div *ngIf="nameControl.errors.minlength">
+                    A minimum of {{nameControl.errors.minlength.requiredLength}} character is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input 
+                required 
+                id= "address" 
+                type="text" 
+                class="form-control" 
+                [(ngModel)]= "customer.customerAddress" 
+                name="customerAddress" 
+                #addressControl="ngModel">
+            </div>
+
+            <div class="alert alert-danger" 
+                *ngIf="!addressControl.valid && addressControl.touched">
+                Address is required.
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input 
+                required id= "email"
+                email 
+                type="email" 
+                class="form-control" 
+                [(ngModel)]= "customer.customerEmail" 
+                name="customerEmail" 
+                #EmailControl="ngModel">
+            </div>
+            <div class="alert alert-danger" *ngIf="!EmailControl.valid && EmailControl.touched">
+                <div *ngIf="EmailControl.errors.required">
+                    Email is required.
+                </div>
+                <div *ngIf="EmailControl.errors.email">
+                    A valid email is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="telno">Tell No</label>
+                <input 
+                required id= "telno" 
+                type="text" class="form-control" 
+                [(ngModel)]= "customer.telNo" 
+                name="telNo" 
+                #TelNoControl="ngModel">
+            </div>
+            <div class="alert alert-danger" 
+                *ngIf="!TelNoControl.valid && TelNoControl.touched">
+                Telephone number is required.
+            </div>
+
+            <div class="form-group">
+                <label for="lisenceNo">lisence No</label>
+                <input 
+                required id= "lisenceNo" 
+                type="text" class="form-control" 
+                [(ngModel)]= "customer.licenceNo" 
+                name="licenceNo" 
+                #lisenceControl="ngModel">
+            </div>
+            <div class="alert alert-danger" 
+                *ngIf="!lisenceControl.valid && lisenceControl.touched">
+                Lisence number is required.
+            </div>
+
+
+            <div class="form-group"><br>
+                    <label for="date">Pick up date: </label><br>
+                    <input type="date" name="pickUpDate" [(ngModel)]= "customer.pickUpDate">
+            </div>
+
+            <div class="form-group"><br>
+                <label for="date">Drop of date: </label><br>
+                <input type="date" name="dropOfDate" [(ngModel)]= "customer.dropOfDate">
+            </div><br>
+
+            <button class="btn btn-primary" type="submit" name = "customer_submit" [disabled] = "!customerForm.valid" (click)="registerNow(); displaySuccessMessage()">Submit</button>   
+        </form>
+    </div>
+</div>

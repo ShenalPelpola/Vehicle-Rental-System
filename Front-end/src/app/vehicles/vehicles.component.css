@@ -1,0 +1,124 @@
+.main-container{
+    margin-top: 100px;
+}
+
+.filter-container{
+    float: left;
+    width: 20%;
+    height: inherit;
+    margin-left: 40px;
+    margin-right: 40px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 50px;
+}
+
+h5{
+    font-weight: bold;
+}
+.search-bar{
+    margin-bottom: 50px;
+    width: 250px;
+}
+.radion-button{
+    margin-right: 10px;
+}
+
+
+.vehicles-container{
+    float: right;
+    width: 60%;
+    margin-right:100px;
+}
+.vehicle-navigation{
+    border-bottom: 4px solid black;
+    margin-bottom: 20px;
+}
+.bike-container{
+    display: none;
+}
+
+#car-button{
+    color: white;
+    background-color: black;
+}
+.nav-button{
+    background-color: white;
+    border: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    outline:none;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+.vehicle-name{
+    font-display: sans-serif;
+    font-weight: bold;
+}
+
+.vehicle-container{
+    width: 800px;
+    height: 170px;
+    background-color:  #f1f1f1;
+    border-radius: 8px;
+    color: black;
+    margin-bottom: 30px;
+}
+img{
+    width: 200px;
+    height:170px;
+    border-radius: 8px;
+}
+
+.img-container{
+    float: left;
+    width: 33%;
+}
+.vehicle-details{
+    float: left;
+    padding-top: 10px;
+    width: 33%;
+}
+.send-button{
+    margin-bottom: 20px;
+    margin-left: 50px;
+    background-color: black;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    outline:none;
+
+}
+.button-container{
+    float: right;
+    width: 33%;
+    padding-top: 30px;
+}
+
+.location-images{
+    height: 170px;
+    width: 180px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.location-images:hover{
+    opacity: 0.5;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

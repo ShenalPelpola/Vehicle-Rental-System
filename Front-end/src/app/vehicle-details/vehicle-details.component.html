@@ -1,0 +1,18 @@
+<div *ngIf= "selectedVehicle" class="vehicle-div">
+    <h1 style="text-align: center; padding-top: 30px;">{{selectedVehicle.make + ' ' + selectedVehicle.model}}</h1>
+    <div class = "main-vehicle clearfix"> 
+        <div class="image">
+            <img [src] = selectedVehicle.imageUrl>
+        </div>
+        <div class="vehicle-details">
+            <ul>
+                <li>{{"Plate number " + selectedVehicle.plateNo}}</li>
+                <li>{{"Engine Capacity " + selectedVehicle.engineCapacity}}</li>
+                <li>{{"Rent per day " + selectedVehicle.rentPerDay}}</li>
+                <li>{{"Color " + selectedVehicle.color}}</li>
+                <li>{{"Transmisson Type" + selectedVehicle.transmissionType}}</li>
+            </ul>
+        </div>
+    </div>
+    <button class="send-button" (click) ="onSelectForm()">Book</button>
+</div>

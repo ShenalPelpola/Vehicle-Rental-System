@@ -1,0 +1,72 @@
+<div class="main-container clearfix">
+    <div class="filter-container clearfix form-groups">
+        <input type = "text" class="form-control search-bar" placeholder="search by make" [(ngModel)] = "searchTerm"/>
+
+        <div class="form-check">
+            <input class="form-check-input radion-button" type="radio" name="searchValue" id="exampleRadios1" value="make" checked 
+            (change) = getSearchPreference($event)/>
+            <label class="form-check-label" for="exampleRadios1">
+                Search by make
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input radion-button" type="radio" name="searchValue" id="exampleRadios2" value="model" [(ngModel)] ="model" (change) = getSearchPreference($event)/>
+            <label class="form-check-label" for="exampleRadios2">
+                search by model
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input radion-button" type="radio" name="searchValue" id="exampleRadios2" value="enigineCapacity" [(ngModel)] ="enigineCapacity" (change) = getSearchPreference($event)/>
+            <label class="form-check-label" for="exampleRadios2">
+                search by enigine Capacity
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input radion-button" type="radio" name="searchValue" id="exampleRadios2" value="transmissionType" [(ngModel)] ="transmissionType" (change) = getSearchPreference($event)/>
+            <label class="form-check-label" for="exampleRadios2">
+                search by Transmission Type
+            </label>
+        </div>
+    </div>
+    <div class="vehicles-container clearfix">
+        <div class = "vehicle-navigation">
+            <button class ="nav-button" id="car-button" (click) = "showListOfCar()"> Cars </button>
+            <button class ="nav-button" id="bike-button" (click) = "showListOfMotorBikes()"> Motor Bikes </button>
+        </div>
+        <div class = "car-container" id = "car-container">
+            <div class="vehicle-container" *ngFor= "let car of filteredCars">
+                <div class = "img-container">
+                <img [src] =car.imageUrl >
+                </div>
+                <div class="vehicle-details">
+                    <h4 class="vehicle-name">{{car.make + ' ' +  car.model}}</h4><br>
+                    <p>{{"Transmission: " + car.transmissionType}}</p>
+                    <p>{{"Color: " + car.color}}</p>
+                    <h5>{{"Rent per day: Rs." + car.rentPerDay}}</h5>
+                </div>
+                <div class = "button-container">
+                    <button class = "send-button" (click)="onSelectView(car)">View</button><br>
+                    <button class = "send-button" (click)="onSelectForm(car)">Book</button>
+                </div>
+            </div>
+        </div>
+
+        <div class = "bike-container" id="bike-container">
+                <div class="vehicle-container" *ngFor= "let motorbike of fitleredBikes">
+                    <div class = "img-container">
+                    <img [src] = motorbike.imageUrl>
+                    </div>
+                    <div class="vehicle-details">
+                        <h4 class="vehicle-name">{{motorbike.make + ' ' +  motorbike.model}}</h4>
+                        <p>{{"Transmission: " + motorbike.transmissionType}}</p>
+                        <p>{{"Color: " + motorbike.color}}</p>
+                        <h5>{{"Rent per day: Rs." + motorbike.rentPerDay}}</h5>
+                    </div>
+                    <div class = "button-container">
+                        <button class = "send-button" (click)= "onSelectView(motorbike)">View</button><br>
+                        <button class = "send-button" (click)="onSelectForm(motorbike)">Book</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
